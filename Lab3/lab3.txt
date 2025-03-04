@@ -1,0 +1,37 @@
+----- POEM SELECTED -----------------------------------------------------
+T.S. Eliot's Four Quartets: Little Gidding (second last paragraph)
+
+Reference - recording on YouTube of TS Eliot himself reading the poem:
+https://youtu.be/x2JxiJ9V-cY?t=920
+(15:20 - 15:51)
+
+We shall not cease from exploration
+And the end of all our exploring
+Will be to arrive where we started
+And know the place for the first time.
+Through the unknown, unremembered gate
+When the last of earth left to discover
+Is that which was the beginning;
+At the source of the longest river
+The voice of the hidden waterfall
+And the children in the apple-tree
+
+----- READ ME -----------------------------------------------------------
+I chose a TTS voice "Aria", en-US which had the most variation for styles
+I changed style and rate in order to try to match the poet's reading (YouTube)
+
+I have also made an attempt at the Part B-VG using a male en-GB voice
+for that I have focused on the speech rate and intonation as well as added 'background crackle'
+----------------------------------------------------------------
+<!--ID=B7267351-473F-409D-9765-754A8EBCDE05;Version=1|{"VoiceNameToIdMapItems":[{"Id":"27e2f1c8-cfe0-4324-88e2-cd0bafeffe1b","Name":"Microsoft Server Speech Text to Speech Voice (en-US, AriaNeural)","ShortName":"en-US-AriaNeural","Locale":"en-US","VoiceType":"StandardVoice"}]}-->
+<!--ID=FCB40C2B-1F9F-4C26-B1A1-CF8E67BE07D1;Version=1|{"Files":{}}-->
+<!--ID=5B95B1CC-2C7B-494F-B746-CF22A0E779B7;Version=1|{"Locales":{"de-DE":{"AutoApplyCustomLexiconFiles":[{}]},"en-GB":{"AutoApplyCustomLexiconFiles":[{}]},"en-US":{"AutoApplyCustomLexiconFiles":[{}]}}}-->
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US"><voice name="en-US-AriaNeural"><s /><mstts:express-as style="newscast-formal"><prosody rate="-30.00%">We shall not </prosody><prosody rate="-45.00%">cease </prosody><prosody rate="-30.00%">from </prosody><prosody rate="-40.00%">exploration </prosody></mstts:express-as><s />
+<s /><mstts:express-as style="default"><prosody rate="-30.00%">And the end of all our </prosody><prosody rate="-46.00%">exploring</prosody><prosody rate="-30.00%"> will be to arrive where we started</prosody></mstts:express-as><s />
+<s /><mstts:express-as style="sad"><prosody rate="-30.00%">And know the </prosody><prosody rate="-50.00%">place</prosody><prosody rate="-30.00%"> for the first </prosody><prosody rate="-40.00%">time</prosody><prosody rate="-30.00%">.</prosody></mstts:express-as><s />
+<s /><mstts:express-as style="hopeful"><prosody rate="-30.00%">Through the </prosody><prosody rate="-60.00%">unknown </prosody><prosody rate="-30.00%">remembered gate</prosody></mstts:express-as><s />
+<s /><mstts:express-as style="friendly"><prosody rate="-30.00%">When the last of earth left to discover is that which was the beginning;</prosody></mstts:express-as><s />
+<s /><mstts:express-as style="empathetic"><prosody rate="-30.00%">At the source of the longest river</prosody></mstts:express-as><s />
+<s /><mstts:express-as style="empathetic"><prosody rate="-30.00%">The voice of the hidden waterfall</prosody></mstts:express-as><s />
+<s /><mstts:express-as style="hopeful"><prosody rate="-30.00%">And the </prosody><prosody rate="-45.00%">children </prosody><prosody rate="-30.00%">in the apple-tree</prosody></mstts:express-as><s /></voice></speak>
+------------------------------------------------------------------
