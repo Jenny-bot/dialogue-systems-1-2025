@@ -1734,7 +1734,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"base64-arraybuffer@npm:1.0.2, base64-arraybuffer@npm:^1.0.2":
+"base64-arraybuffer@npm:1.0.2":
   version: 1.0.2
   resolution: "base64-arraybuffer@npm:1.0.2"
   checksum: 15e6400d2d028bf18be4ed97702b11418f8f8779fb8c743251c863b726638d52f69571d4cc1843224da7838abef0949c670bde46936663c45ad078e89fee5c62
@@ -1873,7 +1873,7 @@ __metadata:
   resolution: "code@workspace:."
   dependencies:
     "@statelyai/inspect": ^0.4.0
-    speechstate: ^2.10.0
+    speechstate: 2.8.0
     typescript: ~5.6.2
     vite: ^6.0.5
     xstate: ^5.19.2
@@ -2336,15 +2336,6 @@ __metadata:
   version: 2.0.3
   resolution: "esutils@npm:2.0.3"
   checksum: 22b5b08f74737379a840b8ed2036a5fb35826c709ab000683b092d9054e5c2a82c27818f12604bfc2a9a76b90b6834ef081edbc1c7ae30d1627012e067c6ec87
-  languageName: node
-  linkType: hard
-
-"event-as-promise@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "event-as-promise@npm:2.0.0"
-  dependencies:
-    event-as-promise: ^2.0.0
-  checksum: 802a80e686b01903a754eef647cffe7d5a69901ebc25735f2606ebaf4dd478c97ddb0dfa3c1c32630b9bd5a1d590bb11b621c953b93aedc7ee1ee9edd2b67b6a
   languageName: node
   linkType: hard
 
@@ -2835,7 +2826,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"memoize-one@npm:6.0.0, memoize-one@npm:^6.0.0":
+"memoize-one@npm:6.0.0":
   version: 6.0.0
   resolution: "memoize-one@npm:6.0.0"
   checksum: f185ea69f7cceae5d1cb596266dcffccf545e8e7b4106ec6aa93b71ab9d16460dd118ac8b12982c55f6d6322fcc1485de139df07eacffaae94888b9b3ad7675f
@@ -3053,15 +3044,6 @@ __metadata:
   version: 1.1.0
   resolution: "on-error-resume-next@npm:1.1.0"
   checksum: 4f32fbf860431c71f3ae9010a2c568cf092040774597761c4b2e01bceac32b2b98d1113e495b1183f7b9fb9ac0616b4938965bcdac12adc037992244aefb31ac
-  languageName: node
-  linkType: hard
-
-"on-error-resume-next@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "on-error-resume-next@npm:2.0.2"
-  dependencies:
-    on-error-resume-next: ^2.0.2
-  checksum: f5681f08911831dd53d52f4fda772861086aa1161b2d2932ffcaa3923f3cee1d9619e11013b7be846594f772e2ba1a8d4d628de360efb5fb9e59fa8566fc62f9
   languageName: node
   linkType: hard
 
@@ -3515,7 +3497,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-update-in@npm:2.2.0, simple-update-in@npm:^2.2.0":
+"simple-update-in@npm:2.2.0":
   version: 2.2.0
   resolution: "simple-update-in@npm:2.2.0"
   checksum: 4d5893fdd5726c8a5986a9238f4fca750476c650c362bcf86050d5abd068a0b5ccaa753f5a64ebd9daa07c92f0f3a2354de38b9feeaaee05853285454775fd53
@@ -3598,14 +3580,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"speechstate@npm:^2.10.0":
-  version: 2.10.0
-  resolution: "speechstate@npm:2.10.0"
+"speechstate@npm:2.8.0":
+  version: 2.8.0
+  resolution: "speechstate@npm:2.8.0"
   dependencies:
     "@vladmaraev/web-speech-cognitive-services-davi": ^2.0.16
-    web-speech-cognitive-services: ^8.1.1
     xstate: ^5.17.4
-  checksum: c6688d2b701064c852c4ed7554724343ee86fc4e6c61df7e42c90610f9f37a1807ee32a94724347095de5d2299056a232515e5e3b233bd763b814821770031b5
+  checksum: 8abb1fc28b09fb183cd6d967ac79fc5e4db374d232e7974e475ad2c727dead65a2edf32de7ccf60278f3344b7e20e23c75ee57055dcb6725652f0923c22458a7
   languageName: node
   linkType: hard
 
@@ -3803,18 +3784,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"valibot@npm:^0.42.1":
-  version: 0.42.1
-  resolution: "valibot@npm:0.42.1"
-  peerDependencies:
-    typescript: ">=5"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 9fe4b6f32e45807688ed86b47f55f3e36ce92e0429685c214ec8746ad6e9d50410a91fdeeb554fff58a8951ff159e8065f1cbb22b64f1497d3c9b1f4a6e737de
-  languageName: node
-  linkType: hard
-
 "validate-npm-package-license@npm:^3.0.1":
   version: 3.0.4
   resolution: "validate-npm-package-license@npm:3.0.4"
@@ -3874,24 +3843,6 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: ed0b5385546d0dafe7bd91e94679aa4ca9064d29a8fd8cb8f9baea388fc049504a83cecd9bae41d19ae025b8b4fd621f1ec6c41255e9bf8c872fd9fa94b9cd42
-  languageName: node
-  linkType: hard
-
-"web-speech-cognitive-services@npm:^8.1.1":
-  version: 8.1.1
-  resolution: "web-speech-cognitive-services@npm:8.1.1"
-  dependencies:
-    base64-arraybuffer: ^1.0.2
-    event-as-promise: ^2.0.0
-    event-target-shim: ^6.0.2
-    memoize-one: ^6.0.0
-    on-error-resume-next: ^2.0.2
-    simple-update-in: ^2.2.0
-    valibot: ^0.42.1
-    web-speech-cognitive-services: ^8.1.1
-  peerDependencies:
-    microsoft-cognitiveservices-speech-sdk: ^1.17.0
-  checksum: 116029483468de0eafa0b8aa022d7060223cb688ca8988a633d9041e07184d870b83fabe0182cf2778da369a52d30e728ee9bda22a4da63e4faa68a1031ff957
   languageName: node
   linkType: hard
 
