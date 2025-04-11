@@ -30,7 +30,7 @@ const settings: Settings = {
   asrDefaultCompleteTimeout: 0,
   asrDefaultNoInputTimeout: 5000,
   locale: "en-US",
-  ttsDefaultVoice: "en-US-DavisNeural",
+  ttsDefaultVoice: "en-US-BrianMultilingualNeural",
 };
 
 interface GrammarEntry {
@@ -127,7 +127,8 @@ const dmMachine = setup({
     dayResult: "",
     timeResult: "",
     nluIntent: "",
-    nluEntities: null
+    nluEntities: null,
+    isNameValid: false,
   }),
   id: "DM",
   initial: "Prepare",
@@ -302,7 +303,7 @@ const dmMachine = setup({
           {
             // Something was recognised, transition to ValidateInput
             target: ".ValidateInput",
-            guard: ({ context }) => (!!context.nameResult || !!context.lastResult![0].utterance),
+            guard: ({ context }) => !!context.lastResult,
           },
           { target: ".NoInput" },
         ],
@@ -367,9 +368,13 @@ const dmMachine = setup({
         ValidateInput: {
           entry: [
             assign({
+              isNameValid: ({ context }) => {
+                const person = getPerson(context.nameResult);
+                return !!person;
+              },
               nameResult: ({ context }) => {
-                const person = (getPerson(context.nameResult) || getPerson(context.lastResult![0].utterance));
-                return person || "Unknown";
+                const person = getPerson(context.nameResult);
+                return person || context.nameResult; // Update nameResult with the valid person or keep the original value
               },
             }),
           ], 
@@ -377,28 +382,39 @@ const dmMachine = setup({
             {
               // If the name is in the grammar, transition to ValidInput state
               target: "ValidInput",
-              guard: ({ context }) => context.nameResult !== "Unknown"
+              guard: ({ context }) => context.isNameValid
             },
             {
               // If the name is not in the grammar, transition to InvalidInput state
               target: "InvalidInput",
-              guard: ({ context }) => context.nameResult === "Unknown"
+              guard: ({ context }) => !context.isNameValid
             }
           ]    
         },
         // Listen for user speech
         Listen: {
           entry: [
-            () => console.log("USING Regular ASR!"),{ 
-            type: "spst.listen", 
+            () => console.log("USING NLU to get NAME!"),{ 
+            type: "spst.listenNLU", 
           },
         ],
           on: {
             RECOGNISED: {
-              actions: assign(({ event }) => {
-                return { lastResult: event.value };
-              }),
-            },
+              actions: assign(({ context, event }) => {
+                console.log("TRYING TO GET NAME: ", event.nluValue.entities);
+          
+                // Use Array.find() to locate the entity with category 'personName'
+                const personEntity = event.nluValue.entities?.find(
+                  (entity: { category: string; text: string }) => entity.category === "personName"
+                );
+          
+                // Update the context with the extracted name or set it to "Unknown" if not found
+                return {
+                  ...context,
+                  nameResult: personEntity?.text || "Unknown",
+                  lastResult: event.nluValue,
+                };
+              }),            },
             ASR_NOINPUT: {
               actions: assign({ lastResult: null }),
             },          
@@ -415,7 +431,7 @@ const dmMachine = setup({
           {
             // Something was recognised, transition to CheckGrammarName
             target: ".ValidateInput",
-            guard: ({ context }) => (!!context.dayResult || !!context.lastResult![0].utterance),
+            guard: ({ context }) => (!!context.dayResult || !!context.lastResult?.[0]?.utterance),
           },
           { target: ".NoInput" },
         ],
@@ -523,7 +539,7 @@ const dmMachine = setup({
           {
             // Something was recognised, transition to CheckGrammarName
             target: ".ValidateInput",
-            guard: ({ context }) => (!!context.timeResult || !!context.lastResult![0].utterance),
+            guard: ({ context }) => (!!context.timeResult || !!context.lastResult?.[0]?.utterance),
           },
           { target: ".NoInput" },
         ],
@@ -640,7 +656,7 @@ const dmMachine = setup({
           {
             // Something was recognised, transition to ValidateInput
             target: ".ValidateInput",
-            guard: ({ context }) => (!!context.timeResult || !!context.lastResult![0].utterance),
+            guard: ({ context }) => (!!context.timeResult || !!context.lastResult?.[0]?.utterance),
           },
           { target: ".NoInput" },
         ],
@@ -744,7 +760,7 @@ const dmMachine = setup({
           {
             // Something was recognised, transition to CheckGrammarName
             target: ".ValidateInput",
-            guard: ({ context }) => !!context.lastResult,
+            guard: ({ context }) => (!!context.lastResult?.[0]?.utterance),
           },
           { target: ".NoInput" },
         ],
@@ -877,7 +893,8 @@ const dmMachine = setup({
           dayResult: "",
           timeResult: "",
           nluIntent: "",
-          nluEntities: null
+          nluEntities: null,
+          isNameValid: false,
         }),
         { 
         type: "spst.speak", 
