@@ -147,7 +147,7 @@ const dmMachine = setup({
     Greeting: {
       entry: { 
         type: "spst.speak", 
-        params: { utterance: `Hi NLU!` } 
+        params: { utterance: `Hi!` } 
       },
       // When TTS output is complete, transition to the AskWhat (NLU) state
       on: { SPEAK_COMPLETE: "AskWhat" },
@@ -190,7 +190,7 @@ const dmMachine = setup({
         ValidInput: {
           entry: [
             () => console.log("VALID INPUT ENTERED!!!!!: "),
-            {type: "spst.speak", params: { utterance: `All right, let's go!` } },
+            {type: "spst.speak", params: { utterance: `All right, let's see.` } },
           ], 
           on: { 
             SPEAK_COMPLETE: [
