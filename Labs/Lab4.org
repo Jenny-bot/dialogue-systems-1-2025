@@ -1,4 +1,11 @@
+
 #+TITLE: Lab IV. Natural language understanding
+|:warning:|
+*Before you proceed*: update speechstate to the latest version!
+#+begin_src sh
+  yarn up speechstate
+#+end_src
+
 
 * Task 1: Integrate a statistical NLU in your dialogue system
 In Lab 2 (basic dialogue management), you used a simplistic mapping
